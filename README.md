@@ -60,16 +60,16 @@ A Batch is a group of Orders following the same production pipeline. Before star
 ### GET /orders
 This endpoint returns all orders \
 By default there are 10 orders per page \
-You can pass the following parameters to this endpoint: \
+You can pass the following parameters to this endpoint: 
 
 `by_client_name` \
-(e.g. '/orders?by_client_name=Natalia') \
+(e.g. '/orders?by_client_name=Natalia') 
 
 `by_purchase_channel` \
-(e.g. '/orders?by_purchase_channel=Site BR') \
+(e.g. '/orders?by_purchase_channel=Site BR') 
 
 `by_reference` \
-(e.g. '/orders?by_reference=ORDER-12092022-1') \
+(e.g. '/orders?by_reference=ORDER-12092022-1') 
 
 `by_status`\
 (e.g. '/orders?by_status=sent')
@@ -83,7 +83,7 @@ This endpoint returns an order and you must pass the order id as a parameter
 ### GET /batches/:id/orders
 This endpoint returns all orders for a batch \
 By default there are 10 orders per page \
-You can pass the following parameters to this endpoint: \
+You can pass the following parameters to this endpoint: 
 
 `page`\
 (e.g. '/batches/:id/orders?page=2')
