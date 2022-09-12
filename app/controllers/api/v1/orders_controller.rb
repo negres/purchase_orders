@@ -11,7 +11,7 @@ module Api::V1
       if order.valid?
         order.save!
 
-        render status: :created, json: { id: order.id }
+        render status: :created
       else
         render status: :bad_request
       end
