@@ -108,7 +108,7 @@ In this endpoint you create a order, you must pass the following information in 
 ### GET /batches
 This endpoint returns all batches \
 By default there are 10 batches per page \
-You can pass the following parameters to this endpoint: \
+You can pass the following parameters to this endpoint: 
 
 `page`\
 (e.g. '/batches?page=2')
