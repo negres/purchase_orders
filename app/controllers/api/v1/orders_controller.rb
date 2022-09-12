@@ -6,10 +6,10 @@ module Api::V1
     has_scope :by_status
 
     def create
-      order = Order.new(order_params)
+      @order = Order.new(order_params)
 
-      if order.valid?
-        order.save!
+      if @order.valid?
+        @order.save!
 
         render status: :created
       else
