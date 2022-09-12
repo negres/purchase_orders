@@ -163,3 +163,4 @@ e.g.:
 - Implement user authentication.
 - Implement a web interface to the application.
 - Transforms purchase_channel, delivery_service, client_name and line_items fields into new tables.
+- Adds a job to process the batch, improving performance.
