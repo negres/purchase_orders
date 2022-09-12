@@ -1,4 +1,5 @@
 # Purchase Orders API
+### v1
 
 Rails REST API to receive purchase orders, group them on batches, follow the orders in the production pipeline until the dispatch and generate some simple financial report.
 
@@ -57,38 +58,38 @@ A Batch is a group of Orders following the same production pipeline. Before star
 
 ## Endpoints
 
-### GET /orders
+### GET /api/v1/orders
 This endpoint returns all orders \
 By default there are 10 orders per page \
 You can pass the following parameters to this endpoint: 
 
 `by_client_name` \
-(e.g. '/orders?by_client_name=Natalia') 
+(e.g. 'api/v1/orders?by_client_name=Natalia') 
 
 `by_purchase_channel` \
-(e.g. '/orders?by_purchase_channel=Site BR') 
+(e.g. /'api/v1/orders?by_purchase_channel=Site BR') 
 
 `by_reference` \
-(e.g. '/orders?by_reference=ORDER-12092022-1') 
+(e.g. '/api/v1/orders?by_reference=ORDER-12092022-1') 
 
 `by_status`\
-(e.g. '/orders?by_status=sent')
+(e.g. '/api/v1/orders?by_status=sent')
 
 `page`\
-(e.g. '/orders?page=2')
+(e.g. '/api/v1/orders?page=2')
 
-### GET /orders/:id
+### GET api/v1/orders/:id
 This endpoint returns an order and you must pass the order id as a parameter
 
-### GET /batches/:id/orders
+### GET api/v1/batches/:id/orders
 This endpoint returns all orders for a batch \
 By default there are 10 orders per page \
 You can pass the following parameters to this endpoint: 
 
 `page`\
-(e.g. '/batches/:id/orders?page=2')
+(e.g. 'api/v1/batches/:id/orders?page=2')
 
-### POST /orders
+### POST api/v1/orders
 In this endpoint you create a order, you must pass the following information in the body of the request:
 
 ```
@@ -105,27 +106,27 @@ In this endpoint you create a order, you must pass the following information in 
     }
 ```
 
-### GET /batches
+### GET api/v1/batches
 This endpoint returns all batches \
 By default there are 10 batches per page \
 You can pass the following parameters to this endpoint: 
 
 `page`\
-(e.g. '/batches?page=2')
+(e.g. 'api/v1/batches?page=2')
 
-### GET /batches/:id
+### GET api/v1/batches/:id
 This endpoint returns an batch and you must pass the batch id as a parameter
 
-### PATCH /batches/:id/produce
+### PATCH api/v1/batches/:id/produce
 This endpoint pass a batch from production to closing and you must pass the batch id as a parameter
 
-### PATCH /batches/:id/close_by_delivery_service
+### PATCH api/v1/batches/:id/close_by_delivery_service
 This endpoint those batch orders should be marked as sent and you must pass the batch id and delivery_service as a parameter
 
 `delivery_service`\
-(e.g. '/batches/1/close_by_delivery_service?delivery_service=Sedex')
+(e.g. 'api/v1/batches/1/close_by_delivery_service?delivery_service=Sedex')
 
-### POST /batches
+### POST api/v1/batches
 In this endpoint you create a batch, you must pass the following information in the body of the request:
 ```
     "batch": {
@@ -134,7 +135,7 @@ In this endpoint you create a batch, you must pass the following information in 
     }
 ```
 
-### GET /financial_report
+### GET api/v1/financial_report
 This endpoint returns a financial report, where orders are grouped by purchase channels, returning the total quantity and total value of orders.
 e.g.:
 ```
