@@ -40,6 +40,13 @@ module Api::V1
       render status: :no_content, json: {}
     end
 
+    def orders
+      batch = Batch.find(params[:id])
+      @orders = batch.orders.page(params[:page] || 1).per(10).order(id: :desc)
+
+      render status: :ok
+    end
+
     private
 
     def batch_params

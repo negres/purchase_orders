@@ -8,6 +8,7 @@ Rails.application.routes.draw do
           member do
             patch 'close_by_delivery_service', action: 'close_by_delivery_service'
             patch 'produce', action: 'produce'
+            get 'orders', action: 'orders'
           end
         end
 
