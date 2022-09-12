@@ -120,7 +120,10 @@ This endpoint returns an batch and you must pass the batch id as a parameter
 This endpoint pass a batch from production to closing and you must pass the batch id as a parameter
 
 ### PATCH /batches/:id/close_by_delivery_service
-This endpoint those batch orders should be marked as sent and you must pass the batch id as a parameter
+This endpoint those batch orders should be marked as sent and you must pass the batch id and delivery_service as a parameter
+
+`delivery_service`\
+(e.g. '/batches/1/close_by_delivery_service?delivery_service=Sedex')
 
 ### POST /batches
 In this endpoint you create a batch, you must pass the following information in the body of the request:
